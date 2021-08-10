@@ -1,0 +1,15 @@
+<div class="container">
+  <p class="display-1">New Task</p>
+  <% if @task.errors.full_messages.any? %>
+  <% @task.errors.full_messages.each { |m| %><p class="text-danger"><%= m %></p><% } %>
+
+  <% end %>
+  <%= form_for @task do |f| %>
+    <%= f.label :title, class: "mt-2" %>
+    <%= f.text_field :title, class: "form-control mt-2" %>
+    <%= f.label :details, class: "mt-2" %>
+    <%= f.text_area :details, class: "form-control mt-2" %>
+    <%= f.submit class: "btn btn-primary btn-lg my-3" %>
+  <% end %>
+  <%= link_to "Back", tasks_path %>
+</div>

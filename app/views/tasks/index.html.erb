@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <p class="display-1">My task</p>
+    <p class="display-1"><%= link_to "➕", new_task_path %></p>
+  </div>
+
+  <% @tasks.each do |task| %>
+    <!-- <%= content_tag(:h2, task.title) %> -->
+    <h2><%= link_to task.title, task_path(task)%></h2>
+  <% end %>
+</div>
